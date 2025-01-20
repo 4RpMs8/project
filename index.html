@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>آموزش ساخت سایت در GitHub - سید محمد شایان رضوی</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1, h2 {
+            text-align: center;
+            color: #2c3e50;
+        }
+        h2 {
+            margin-top: 30px;
+        }
+        p {
+            line-height: 1.6;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        .menu {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background-color: #333;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+        .menu .fas {
+            font-size: 18px;
+            animation: rotate 1s infinite linear;
+        }
+        .menu-content {
+            display: none;
+            position: fixed;
+            top: 40px;
+            right: 10px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .menu-content a {
+            display: block;
+            padding: 10px;
+            color: #333;
+            text-decoration: none;
+        }
+        .menu-content a:hover {
+            background-color: #f4f4f4;
+        }
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="menu" onclick="toggleMenu()">
+        <i class="fas fa-ellipsis-v"></i>
+    </div>
+    <div class="menu-content" id="menu-content">
+        <a href="#">تنظیمات</a>
+        <a href="#">راهنما</a>
+        <a href="#">درباره</a>
+    </div>
+    <div class="container">
+        <h1>آموزش ساخت سایت در GitHub</h1>
+        <h2>توسط سید محمد شایان رضوی</h2>
+        
+        <h2>۱. ایجاد مخزن جدید در GitHub</h2>
+        <p>برای شروع، به <a href="https://github.com/" target="_blank">GitHub</a> وارد شوید و یک مخزن جدید ایجاد کنید.</p>
+        <pre>
+            ۱. به صفحه GitHub بروید و وارد حساب کاربری خود شوید.
+            ۲. بر روی دکمه "New" در بالای صفحه کلیک کنید.
+            ۳. نام مخزن خود را وارد کنید و توضیحی برای آن بنویسید.
+            ۴. نوع مخزن را عمومی (Public) یا خصوصی (Private) انتخاب کنید.
+            ۵. بر روی دکمه "Create repository" کلیک کنید.
+        </pre>
+
+        <h2>۲. کلون کردن مخزن به کامپیوتر</h2>
+        <p>پس از ایجاد مخزن، باید آن را به کامپیوتر خود کلون کنید.</p>
+        <pre>
+            ۱. لینک HTTPS یا SSH مخزن را کپی کنید.
+            ۲. یک ترمینال یا خط فرمان باز کنید و دستور زیر را اجرا کنید:
+            git clone &lt;URL&gt;
+            (به جای &lt;URL&gt;، لینک کپی شده را وارد کنید)
+        </pre>
+
+        <h2>۳. انتقال فایل‌ها به پوشه مخزن</h2>
+        <p>فایل‌های HTML، CSS و تصاویر خود را به پوشه مخزن منتقل کنید.</p>
+        <pre>
+            ۱. فایل‌های HTML، CSS و تصاویر خود را به پوشه مخزن که به کامپیوتر خود کلون کرده‌اید منتقل کنید.
+            ۲. تغییرات خود را با دستور زیر به مخزن اضافه کنید:
+            git add .
+            ۳. تغییرات خود را کامیت کنید:
+            git commit -m "انتقال فایل‌ها به پوشه مخزن"
+          </pre>
+
+        <h2>۴. افزودن فایل HTML و CSS به مخزن</h2>
+        <p>فایل HTML و CSS خود را ایجاد و به مخزن اضافه کنید.</p>
+        <pre>
+            ۱. یک فایل HTML با نام index.html ایجاد کنید و کد HTML خود را در آن بنویسید.
+            ۲. یک فایل CSS با نام styles.css ایجاد کنید و کد CSS خود را در آن بنویسید.
+            ۳. تغییرات خود را با دستور زیر به مخزن اضافه کنید:
+            git add .
+            git commit -m "افزودن فایل HTML و CSS"
+            git push origin main
+        </pre>
+
+        <h2>۵. افزودن تصاویر و منابع به مخزن</h2>
+        <p>تصاویر و منابع مورد نیاز خود را به مخزن اضافه کنید.</p>
+        <pre>
+            ۱. تصاویر و منابع مورد نیاز خود را به پوشه مخزن اضافه کنید.
+            ۲. تغییرات خود را با دستور زیر به مخزن اضافه کنید:
+            git add .
+            git commit -m "افزودن تصاویر و منابع"
+            git push origin main
+        </pre>
+
+        <h2>۶. پیاده‌سازی بازی حدس عدد در وب‌سایت</h2>
+        <p>بازی حدس عدد را به وب‌سایت خود اضافه کنید.</p>
+        <pre>
+            ۱. کد HTML و JavaScript بازی حدس عدد را به فایل HTML خود اضافه کنید.
+            ۲. تغییرات خود را با دستور زیر به مخزن اضافه کنید:
+            git add .
+            git commit -m "افزودن بازی حدس عدد"
+            git push origin main
+        </pre>
+    </div>
+    <script>
+        function toggleMenu() {
+            var menuContent = document.getElementById('menu-content');
+            if (menuContent.style.display === 'none' || menuContent.style.display === '') {
+                menuContent.style.display = 'block';
+            } else {
+                menuContent.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
